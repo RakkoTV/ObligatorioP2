@@ -9,10 +9,17 @@ typedef struct    {
                     int CantPaginas;
                  } Expediente;
 
+//Cargar Expediente
+void IngresarExpediente(Expediente &Ex,int n);
 
+//Mostrar Expediente
+void MostrarExpediente(Expediente E);
 
 //Selectora Codigo
 int Darcodigo(Expediente E);
+
+
+
 
 
 #endif // EXPEDIENTE_H_INCLUDED
