@@ -10,4 +10,9 @@ typedef struct    {
                  } Expediente;
 
 
+
+//Selectora Codigo
+int Darcodigo(Expediente E);
+
+
 #endif // EXPEDIENTE_H_INCLUDED
