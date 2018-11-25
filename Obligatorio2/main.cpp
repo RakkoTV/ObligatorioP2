@@ -1,9 +1,11 @@
-#include <iostream>
-
-using namespace std;
+#include "Evaluacion.h"
+#include "Expediente.h"
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    Escribano escri;
+    IngresarEscribano(escri);
+    MostrarEscribano(escri);
+
+
 }

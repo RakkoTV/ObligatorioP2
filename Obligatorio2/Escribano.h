@@ -8,4 +8,10 @@ typedef struct
 
 }Escribano;
 
+
+//Ingresar Escribano
+void IngresarEscribano(Escribano &Es);
+//Mostrar Escribano
+void MostrarEscribano(Escribano Es);
+
 #endif // ESCRIBANO_H_INCLUDED

@@ -4,12 +4,10 @@
 #include "EvaluacionEnum.h"
 #include "Fecha.h"
 
-typedef struct Eval
-                 { int NumeroExpediente;
-                   Fecha f;
-                   String desc;
-                   EvalRev e;
-                   Eval * sig;
+typedef struct { Fecha f;
+                 String desc;
+                 EvalRev e;
                  }Evaluacion;
-typedef Evaluacion * Evaluaciones;
+
 #endif // EVALUACION_H_INCLUDED
+

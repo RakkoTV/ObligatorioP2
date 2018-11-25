@@ -2,16 +2,12 @@
 #define EXPEDIENTE_H_INCLUDED
 #include "Escribano.h"
 
-typedef struct ExpeABB{
+typedef struct    {
                     int codigo;
                     String Caratula;
                     Escribano Escri;
                     int CantPaginas;
-                    ExpeABB *hizq;
-                    ExpeABB  *hder;
-                } Expediente;
-
-typedef Expediente * Expedientes;
+                 } Expediente;
 
 
 #endif // EXPEDIENTE_H_INCLUDED
