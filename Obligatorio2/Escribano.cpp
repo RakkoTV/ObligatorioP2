@@ -2,9 +2,9 @@
 
 void IngresarEscribano(Escribano &Es)
 {
-  printf("\n Ingresar Escribano : \t");
+  printf("\n Ingresar Nombre : \t");
   scan(Es.Nombre);
-  printf("\n Ingresar Escribano : \t");
+  printf("\n Ingresar Apellido : \t");
   scan(Es.Apellido);
 
 }
@@ -12,7 +12,7 @@ void IngresarEscribano(Escribano &Es)
 void MostrarEscribano(Escribano Es)
 {
     print(Es.Nombre);
-    printf("\n");
+    printf("-");
     print(Es.Apellido);
 
 

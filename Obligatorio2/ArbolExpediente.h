@@ -19,4 +19,19 @@ boolean ExisteExp(ABBExp AB, int n);
 //Ingresar Expediente en Arbol
 void IngresarExpedienteABB(ABBExp &EXP, Expediente E);
 
+//Listar Expedientes de menor a mayor
+void ListarExpedientes(ABBExp AB);
+
+//Lista en Preorden(Expediente)
+void PreOrden(ABBExp AB);
+
+//Lista Orden(Expediente)
+void Orden(ABBExp AB);
+
+//Lista Postorden(Expediente)
+void PostOrden(ABBExp AB);
+
+
+
+
 #endif // ARBOLEXPEDIENTE_H_INCLUDED

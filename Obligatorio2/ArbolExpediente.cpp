@@ -25,7 +25,7 @@ boolean ExisteExp(ABBExp AB, int n)
 
 void IngresarExpedienteABB(ABBExp &EXP, Expediente E)
 {
-    printf("Entra if");
+
     if (EXP==NULL)
 
     {
@@ -46,3 +46,50 @@ void IngresarExpedienteABB(ABBExp &EXP, Expediente E)
 
 
 }
+void ListarExpedientes(ABBExp AB)
+{
+  Orden(AB);
+
+
+}
+
+
+void PreOrden(ABBExp AB)
+{
+
+if (AB !=NULL)
+{
+
+
+  MostrarExpediente(AB->info);
+   PreOrden(AB->hizq);
+   PreOrden(AB->hder);
+
+}
+}
+
+void Orden(ABBExp AB)
+{
+    if(AB !=NULL)
+    {
+        Orden(AB->hizq);
+        MostrarExpediente(AB->info);
+
+        Orden(AB->hder);
+
+
+    }
+}
+
+void PostOrden(ABBExp AB)
+{
+    if(AB !=NULL)
+    {
+       PostOrden(AB->hizq);
+        PostOrden(AB->hder);
+       MostrarExpediente(AB->info);
+
+    }
+}
+
+
