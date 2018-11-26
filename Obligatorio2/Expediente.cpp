@@ -24,3 +24,8 @@ int Darcodigo(Expediente E)
 {
     return E.codigo;
 }
+
+int DarCantPaginas (Expediente E)
+{
+    return E.CantPaginas;
+}

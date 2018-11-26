@@ -5,9 +5,13 @@
 #include "Fecha.h"
 
 typedef struct { Fecha f;
+                 int CodigoExpediente;
                  String desc;
                  EvalRev e;
                  }Evaluacion;
+
+
+int Darcodigo(Evaluacion Ev);
 
 #endif // EVALUACION_H_INCLUDED
 

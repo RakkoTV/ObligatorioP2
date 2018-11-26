@@ -8,4 +8,14 @@ typedef struct Eval
                    }NodoEval;
 
 typedef NodoEval * ListaEval;
+
+//Crear Lista
+void Crear(ListaEval &L);
+
+//Verificar si esta vacia
+boolean EsVacia(ListaEval E);
+
+//Insertar adelante
+void InsFront(ListaEval &E, Evaluacion Ev);
+
 #endif // LISTAEVALUACIONES_H_INCLUDED

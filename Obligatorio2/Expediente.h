@@ -18,8 +18,8 @@ void MostrarExpediente(Expediente E);
 //Selectora Codigo
 int Darcodigo(Expediente E);
 
-
-
+//Selectora Cantidad de paginas
+int DarCantPaginas (Expediente E);
 
 
 #endif // EXPEDIENTE_H_INCLUDED
