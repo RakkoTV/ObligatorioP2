@@ -19,16 +19,16 @@ printf("%d - %d - %d \t",f.ano,f.mes,f.dia);
 
 }
 
-int ano(Fecha f)
+int Darano(Fecha f)
 {
     return f.ano;
 }
 
-int mes(Fecha f)
+int Darmes(Fecha f)
 {
     return f.mes;
 }
-int dia(Fecha f)
+int Dardia(Fecha f)
 {
  return f.dia;
 }
