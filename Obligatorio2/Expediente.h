@@ -20,6 +20,12 @@ int Darcodigo(Expediente E);
 
 //Selectora Cantidad de paginas
 int DarCantPaginas (Expediente E);
+//Dar caratula
+void DarCaratula(Expediente E, String &s);
+
+//Dar Escribano
+void DarEscribano(Expediente E, String &Nombre, String &Apellido);
+
 
 
 #endif // EXPEDIENTE_H_INCLUDED

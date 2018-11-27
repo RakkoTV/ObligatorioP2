@@ -18,3 +18,18 @@ void MostrarEscribano(Escribano Es)
 
 
 }
+
+void DarNombre(Escribano ES, String &S )
+{
+  strcop(S,ES.Nombre);
+
+
+}
+
+void DarApellido(Escribano ES, String &S )
+{
+  strcop(S,ES.Apellido);
+
+
+}
+

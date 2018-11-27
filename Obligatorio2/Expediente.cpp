@@ -29,3 +29,17 @@ int DarCantPaginas (Expediente E)
 {
     return E.CantPaginas;
 }
+
+void DarCaratula(Expediente E, String &S)
+{
+    strcop(S,E.Caratula);
+
+
+}
+
+void DarEscribano(Expediente E, String &Nombre, String &Apellido)
+{
+      DarNombre(E.Escri,Nombre);
+      DarApellido(E.Escri,Apellido);
+
+}
