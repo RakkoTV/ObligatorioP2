@@ -6,6 +6,8 @@
 
 void MostrarMenu(int opcion);
 
+void IngresaExpedienteM ();
 
+void IngresaExpedienteARevisar ();
 
 #endif // MENU_H_INCLUDED
