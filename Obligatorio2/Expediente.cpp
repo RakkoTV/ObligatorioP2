@@ -6,6 +6,7 @@ void IngresarExpediente(Expediente &Ex, int n)
     printf("\n Ingrese Cartula: ");
     fflush(stdin);
     scan(Ex.Caratula);
+    fflush(stdin);
     IngresarEscribano(Ex.Escri);
     printf("\n Ingrese cantidad de Paginas: ");
     scanf("%d",&Ex.CantPaginas);

@@ -7,6 +7,8 @@ typedef struct{
       int mes;
       int ano;
 }Fecha;
+
+
 //Carga Fecha(dia-mes-año)
 void CargarFecha(Fecha &f);
 //Mostrar Fecha
@@ -15,7 +17,7 @@ void MostrarFecha(Fecha f);
 int Darano(Fecha f);
 //Selectora para mes
 int Darmes(Fecha f);
-//Selectoria para dia
+//Selectora para dia
 int Dardia(Fecha f);
 
 boolean FechaValida(Fecha f);

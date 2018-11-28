@@ -13,5 +13,16 @@ typedef struct { Fecha f;
 
 int Darcodigo(Evaluacion Ev);
 
+void IngresarEvaluacion (Evaluacion &Ev, int n,Fecha fe);
+
+int DarDiaEvaluacion (Evaluacion EV);
+
+int DarMesEvaluacion (Evaluacion EV);
+
+int DarAnoEvaluacion (Evaluacion EV);
+
+
+
+
 #endif // EVALUACION_H_INCLUDED
 

@@ -18,4 +18,7 @@ boolean EsVacia(ListaEval E);
 //Insertar adelante
 void InsFront(ListaEval &E, Evaluacion Ev);
 
+//Verificar Fecha
+boolean VerificarFecha (ListaEval e, Fecha f);
+
 #endif // LISTAEVALUACIONES_H_INCLUDED
