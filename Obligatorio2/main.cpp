@@ -3,13 +3,25 @@
 
 int main()
 {
+
+Evaluacion Ev;
+ListaEval Le;
+ABBExp AB;
+Expediente E;
+crear(AB);
+
+
     int op=0;
 
 do{
-printf("Ingrse Opcion:\t");
+printf("\nOpciones:\n");
+printf("\t1) Ingresar un Expediente\n");
+printf("\t2) Ver los Expedientes Ingresados\n");
+printf("\t3) Ingresar Expediente a Revisar\n");
+printf("\t0) Salir\n");
 scanf("%d",&op);
 
-MostrarMenu(op);
+MostrarMenu(op,AB,E,Ev,Le);
 
 
 }while(op!=0);

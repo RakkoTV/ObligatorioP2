@@ -9,18 +9,22 @@ void IngresarEvaluacion (Evaluacion &Ev, int n,Fecha fe){
     int codigo;
     Ev.CodigoExpediente=n;
     Ev.f=fe;
-    printf("Ingrese la descripcion de la evaluacion: ");
+    printf("\n\tIngrese la descripcion de la evaluacion:\n\t ");
     scan(Ev.desc);
-    printf("Ingrese 1-Satifactoria 2-Incompleta 3-Pendiente");
-    scanf("%d",codigo);
+    printf("Ingrese:\n\t 1-Satifactoria\n\t 2-Incompleta\n\t 3-Pendiente\n");
+    fflush(stdin);
+    scanf("%d",&codigo);
 
     switch (codigo){
 
-    case 1: Ev.e=SATISFACTORIA;
+    case 1:
+            Ev.e=SATISFACTORIA;
     break;
-    case 2: Ev.e=INCOMPLETA;
+    case 2:
+            Ev.e=INCOMPLETA;
     break;
-    case 3: Ev.e=PENDIENTE;
+    case 3:
+            Ev.e=PENDIENTE;
     break;
     }
 

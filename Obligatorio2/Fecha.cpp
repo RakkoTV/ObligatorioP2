@@ -2,11 +2,11 @@
 
 void CargarFecha(Fecha &f)
 {
-    printf("Ingrese ano");
+    printf("\n\tIngrese ano");
     scanf("%d",&f.ano);
-    printf("Ingrese mes");
+    printf("\n\tIngrese mes");
     scanf("%d",&f.mes);
-    printf("Ingrese dia");
+    printf("\n\tIngrese dia");
     scanf("%d",&f.dia);
 
 }

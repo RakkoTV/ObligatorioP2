@@ -93,3 +93,57 @@ void PostOrden(ABBExp AB)
 }
 
 
+
+
+//void Borrar_Minimo (ABBExp &AB)
+//{
+//	ABBExp aux;
+//	if (AB -> hizq == NULL)
+//	{
+//		aux = AB -> hder;
+//		delete AB;
+//		AB = aux;
+//	}
+//	else
+//		Borrar_Minimo (AB -> hizq);
+//}
+//
+//void Borrar (int x , ABBExp &AB)
+//{ ABBExp aux;
+//
+//if (ExisteExp(AB,x) == TRUE)
+//{
+//	if (AB -> hder == NULL)
+//	{
+//		aux = AB -> hizq;
+//		delete AB;
+//		AB = aux;
+//	}else
+//		{
+//			if (AB -> hizq == NULL)
+//				{
+//					aux = AB -> hder;
+//					delete AB;
+//					AB = aux;
+//				} else
+//					{
+//						AB -> info = Minimo (AB -> hder);
+//						Borrar_Minimo (AB -> hder);
+//					}
+//		}
+//}else
+//	{
+//		if (x < AB -> info)
+//			Borrar (x, AB -> hizq);
+//		else
+//			Borrar (x, AB -> hder);
+//	}
+//}
+//
+//void Minimo (ABBExp AB)
+//{
+// if (AB -> hizq == NULL)
+// return (AB->info);
+// else
+// return Minimo (AB -> hizq);
+//}

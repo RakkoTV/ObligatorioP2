@@ -1,14 +1,14 @@
 #include "Menu.h"
 
 
-void MostrarMenu(int opcion)
+void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le)
 {
     switch(opcion)
     {
 
         case 1:
         {
-            IngresaExpedienteM();
+            IngresaExpedienteM(AB, E);
 
 
         break;}
@@ -16,10 +16,15 @@ void MostrarMenu(int opcion)
         case 2:
 
         {
-            IngresaExpedienteARevisar();
-
+            ListarExpedientes(AB);
 
         break;}
+
+        case 3:
+            {
+                IngresaExpedienteARevisar(AB,E,Ev,Le);
+
+            break;}
 
 
 
@@ -30,17 +35,12 @@ void MostrarMenu(int opcion)
 }
 
 
-void IngresaExpedienteM ()
+void IngresaExpedienteM (ABBExp &AB, Expediente &E)
 {
-    Evaluacion Ev;
-ListaEval Le;
-ABBExp AB;
-Expediente E;
 int n;
-Fecha f;
-crear(AB);
 
-printf("Ingrese un numero de expediente");
+printf("\n\tIngrese un numero de expediente: ");
+fflush(stdin);
 scanf("%d",&n);
 if (ExisteExp(AB,n)==FALSE)
 {
@@ -48,25 +48,20 @@ if (ExisteExp(AB,n)==FALSE)
   IngresarExpedienteABB(AB,E);
 }
 else
-    printf("Ya existe expediente");
+    printf("\n\tYa existe expediente\n");
 
 }
 
 
-void IngresaExpedienteARevisar ()
+
+
+void IngresaExpedienteARevisar (ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le)
 {
 
-Evaluacion Ev;
-ListaEval Le;
-ABBExp AB;
-Expediente E;
 int n;
 Fecha f;
-crear(AB);
 
-ListarExpedientes(AB);
-
-printf("Ingrese el numero de expediente a revisar");
+printf("\n\tIngrese un numero de expediente a Revisar: ");
 scanf("%d",&n);
 if (ExisteExp(AB,n)==TRUE)
 {
