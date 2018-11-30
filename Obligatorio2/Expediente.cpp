@@ -27,7 +27,7 @@ void MostrarExpediente(Expediente E)
     MostrarEscribano(E.Escri);
     printf("\n\tCantidad de Paginas: ");
     printf("%d",E.CantPaginas);
-    printf("\n--------------------------");
+    printf("\n-----------------------------");
 }
 int DarcodigoExp(Expediente E)
 {

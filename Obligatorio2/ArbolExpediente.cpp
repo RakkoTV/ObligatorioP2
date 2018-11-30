@@ -78,6 +78,7 @@ void Orden(ABBExp AB)
         Orden(AB->hder);
     }
     else
+        //VER XQ SE IMPRIME 2 VECES
         printf("\n\tNo hay Expedientes para Mostrar\n");
 }
 
