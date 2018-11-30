@@ -31,11 +31,11 @@ void Orden(ABBExp AB);
 //Lista Postorden(Expediente)
 void PostOrden(ABBExp AB);
 //Devuelve el Minimo
-void Minimo (ABBExp a);
+Expediente Minimo (ABBExp a);
 //Borrar mas chico
 void Borrar_Minimo (ABBExp &AB);
 //Borrar del Arbol de Expediente el numero ingresado
-void Borrar (int x , ABBExp &AB) ;
+void BorrarABB (int x , ABBExp &AB) ;
 
 
 

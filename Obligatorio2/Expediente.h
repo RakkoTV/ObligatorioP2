@@ -16,7 +16,7 @@ void IngresarExpediente(Expediente &Ex,int n);
 void MostrarExpediente(Expediente E);
 
 //Selectora Codigo
-int Darcodigo(Expediente E);
+int DarcodigoExp(Expediente E);
 
 //Selectora Cantidad de paginas
 int DarCantPaginas (Expediente E);

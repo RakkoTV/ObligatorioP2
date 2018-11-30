@@ -26,13 +26,30 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
 
             break;}
 
+        case 4:
+            {
+                int n;
+
+                printf("\n\tIngrese un numero de expediente: ");
+                fflush(stdin);
+                scanf("%d",&n);
+                if (ExisteExp(AB,n)==TRUE)
+                {
+                  BorrarABB(n,AB);
+                }
+                else
+                    printf("\n\tNo existe expediente\n");
+
+                }
+
+            }
+
 
 
 
     }
 
 
-}
 
 
 void IngresaExpedienteM (ABBExp &AB, Expediente &E)

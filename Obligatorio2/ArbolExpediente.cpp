@@ -11,10 +11,10 @@ boolean ExisteExp(ABBExp AB, int n)
      FALSE;
      else
         {
-          if((Darcodigo(AB->info)) == n)
+          if((DarcodigoExp(AB->info)) == n)
             TRUE;
             else
-                if (n < Darcodigo(AB->info))
+                if (n < DarcodigoExp(AB->info))
                  return ExisteExp(AB->hizq,n);
                   else
                   return ExisteExp(AB->hder,n);
@@ -37,7 +37,7 @@ void IngresarExpedienteABB(ABBExp &EXP, Expediente E)
 
     }
      else
-        if((Darcodigo(E))< (Darcodigo(EXP->info)))
+        if((DarcodigoExp(E))< (DarcodigoExp(EXP->info)))
            return IngresarExpedienteABB(EXP->hizq,E);
            else
            return IngresarExpedienteABB(EXP->hder,E);
@@ -95,55 +95,57 @@ void PostOrden(ABBExp AB)
 
 
 
-//void Borrar_Minimo (ABBExp &AB)
-//{
-//	ABBExp aux;
-//	if (AB -> hizq == NULL)
-//	{
-//		aux = AB -> hder;
-//		delete AB;
-//		AB = aux;
-//	}
-//	else
-//		Borrar_Minimo (AB -> hizq);
-//}
-//
-//void Borrar (int x , ABBExp &AB)
-//{ ABBExp aux;
-//
-//if (ExisteExp(AB,x) == TRUE)
-//{
-//	if (AB -> hder == NULL)
-//	{
-//		aux = AB -> hizq;
-//		delete AB;
-//		AB = aux;
-//	}else
-//		{
-//			if (AB -> hizq == NULL)
-//				{
-//					aux = AB -> hder;
-//					delete AB;
-//					AB = aux;
-//				} else
-//					{
-//						AB -> info = Minimo (AB -> hder);
-//						Borrar_Minimo (AB -> hder);
-//					}
-//		}
-//}else
-//	{
-//		if (x < AB -> info)
-//			Borrar (x, AB -> hizq);
-//		else
-//			Borrar (x, AB -> hder);
-//	}
-//}
-//
-//void Minimo (ABBExp AB)
-//{
-// if (AB -> hizq == NULL)
-// return (AB->info);
-// else
-// return Minimo (AB -> hizq);
-//}
+void Borrar_Minimo (ABBExp &AB)
+{
+	ABBExp aux;
+	if (AB -> hizq == NULL)
+	{
+		aux = AB -> hder;
+		delete AB;
+		AB = aux;
+	}
+	else
+		Borrar_Minimo (AB -> hizq);
+}
+
+void BorrarABB (int x , ABBExp &AB)
+{
+
+    ABBExp aux;
+
+if (x == DarcodigoExp(AB->info))
+{
+	if (AB -> hder == NULL)
+	{
+		aux = AB-> hizq;
+		delete AB;
+		AB = aux;
+	}else
+		{
+			if (AB->hizq == NULL)
+				{
+					aux = AB -> hder;
+					delete AB;
+					AB = aux;
+				} else
+					{
+						AB -> info=Minimo (AB -> hder);
+						Borrar_Minimo (AB -> hder);
+					}
+		}
+}else
+	{
+		if (x < DarcodigoExp(AB->info))
+			BorrarABB (x, AB -> hizq);
+		else
+			BorrarABB (x, AB -> hder);
+	}
+}
+
+Expediente Minimo (ABBExp AB)
+{
+ if (AB -> hizq == NULL)
+ return AB->info;
+ else
+ return Minimo (AB-> hizq);
+}

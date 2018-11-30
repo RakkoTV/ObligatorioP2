@@ -2,14 +2,17 @@
 
 void IngresarExpediente(Expediente &Ex, int n)
 {
+    IngresarEscribano(Ex.Escri);
     Ex.codigo=n;
     printf("\n\tIngrese Caratula: ");
     fflush(stdin);
+    strcrear(Ex.Caratula);
     scan(Ex.Caratula);
     fflush(stdin);
-    IngresarEscribano(Ex.Escri);
+
     printf("\n\tIngrese Cantidad de Paginas: ");
     scanf("%d",&Ex.CantPaginas);
+
 
 
 }
@@ -17,7 +20,7 @@ void IngresarExpediente(Expediente &Ex, int n)
 void MostrarExpediente(Expediente E)
 {
     printf("\n\tExpediente Codigo: ");
-    printf("%d",Darcodigo(E));
+    printf("%d",DarcodigoExp(E));
     printf("\n\tExpediente Caratula: ");
     print(E.Caratula);
     printf("\n\tExpediente Escribano: ");
@@ -26,7 +29,7 @@ void MostrarExpediente(Expediente E)
     printf("%d",E.CantPaginas);
     printf("\n--------------------------");
 }
-int Darcodigo(Expediente E)
+int DarcodigoExp(Expediente E)
 {
     return E.codigo;
 }

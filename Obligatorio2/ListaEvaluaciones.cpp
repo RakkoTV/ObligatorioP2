@@ -1,7 +1,7 @@
 #include"ListaEvaluaciones.h"
 
 
-void Crear(ListaEval &L)
+void CrearLista(ListaEval &L)
 {
 	L = NULL;
 }
@@ -28,7 +28,7 @@ boolean VerificarFecha (ListaEval e, Fecha f)
     boolean verificar=TRUE;
     if(EsVacia(e) == FALSE)
     {
-        boolean verificar=FALSE;
+         verificar=FALSE;
         if ((Darano(f))>=(DarAnoEvaluacion(e->info)))
         {
             if ((Darmes(f))>=(DarMesEvaluacion(e->info)))

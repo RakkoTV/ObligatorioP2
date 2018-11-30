@@ -1,6 +1,6 @@
 #include"Evaluacion.h"
 
-int Darcodigo(Evaluacion Ev)
+int DarcodigoEva(Evaluacion Ev)
 {
     return Ev.CodigoExpediente;
 }

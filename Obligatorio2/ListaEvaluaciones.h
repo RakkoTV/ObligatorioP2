@@ -10,7 +10,7 @@ typedef struct Eval
 typedef NodoEval * ListaEval;
 
 //Crear Lista
-void Crear(ListaEval &L);
+void CrearLista(ListaEval &L);
 
 //Verificar si esta vacia
 boolean EsVacia(ListaEval E);

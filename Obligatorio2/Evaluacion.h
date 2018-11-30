@@ -11,7 +11,7 @@ typedef struct { Fecha f;
                  }Evaluacion;
 
 
-int Darcodigo(Evaluacion Ev);
+int DarcodigoEva(Evaluacion Ev);
 
 void IngresarEvaluacion (Evaluacion &Ev, int n,Fecha fe);
 
