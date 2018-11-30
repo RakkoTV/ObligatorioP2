@@ -2,13 +2,13 @@
 
 void IngresarEscribano(Escribano &Es)
 {
-  printf(" Ingresar Nombre: ");
+  printf(" \tIngresar Nombre de Escribano: ");
 
   strcrear(Es.Nombre);
   fflush(stdin);
   scan(Es.Nombre);
 
-  printf(" \n Ingresar Apellido: ");
+  printf(" \n\tIngresar Apellido de Escribano: ");
 
   strcrear(Es.Apellido);
   scan(Es.Apellido);

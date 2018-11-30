@@ -43,6 +43,40 @@ boolean VerificarFecha (ListaEval e, Fecha f)
 return verificar;
 }
 
+/* Se propone una solución recursiva */
+void BorrarEval (ListaEval &E, int n)
+{
+if (E != NULL)
+{
+ if (n == DarcodigoEva(E -> info))
+ {
+ ListaEval aux = E;
+ E = E -> sig;
+ delete aux;
+ BorrarEval (E, n);
+ }
+ else
+ BorrarEval (E -> sig, n);
+ }
+}
+
+
+void MostrarEv(ListaEval E)
+{
+ while (E != NULL)
+{
+  printf("\nLa Fecha de la revision es: ");
+  printf("%d",DarDiaEvaluacion(E ->info));
+  printf("/");
+  printf("%d",DarMesEvaluacion(E ->info));
+  printf("/");
+  printf("%d",DarAnoEvaluacion(E ->info));
+  printf("\nEl Codigo es: ");
+  printf("%d",DarcodigoEva(E ->info));
+  E = E -> sig;
+}
+}
+
 
 
 

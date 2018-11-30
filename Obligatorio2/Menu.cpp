@@ -22,14 +22,32 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
 
         case 3:
             {
-                IngresaExpedienteARevisar(AB,E,Ev,Le);
-
+               MostrarEv(Le);
             break;}
 
         case 4:
             {
-                int n;
+                IngresaExpedienteARevisar(AB,E,Ev,Le);
 
+            break;}
+
+        case 5:
+            {
+
+                EliminaExpediente (AB);
+                EliminaEval(Le);
+            break;}
+
+
+
+
+    }
+
+}
+
+void EliminaExpediente(ABBExp &AB)
+{
+                int n;
                 printf("\n\tIngrese un numero de expediente: ");
                 fflush(stdin);
                 scanf("%d",&n);
@@ -40,16 +58,18 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
                 else
                     printf("\n\tNo existe expediente\n");
 
-                }
+}
 
-            }
+void EliminaEval(ListaEval &Le)
+{
+                int n;
+                printf("\n\tIngrese un numero de expediente: ");
+                fflush(stdin);
+                scanf("%d",&n);
 
+                BorrarEval (Le, n);
 
-
-
-    }
-
-
+}
 
 
 void IngresaExpedienteM (ABBExp &AB, Expediente &E)
@@ -68,8 +88,6 @@ else
     printf("\n\tYa existe expediente\n");
 
 }
-
-
 
 
 void IngresaExpedienteARevisar (ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le)

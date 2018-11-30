@@ -76,9 +76,9 @@ void Orden(ABBExp AB)
         MostrarExpediente(AB->info);
 
         Orden(AB->hder);
-
-
     }
+    else
+        printf("\n\tNo hay Expedientes para Mostrar\n");
 }
 
 void PostOrden(ABBExp AB)

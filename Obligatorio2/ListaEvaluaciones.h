@@ -21,4 +21,10 @@ void InsFront(ListaEval &E, Evaluacion Ev);
 //Verificar Fecha
 boolean VerificarFecha (ListaEval e, Fecha f);
 
+//Borra de Lista
+void BorrarEval (ListaEval &E, int n);
+
+//Muestra la Lista
+void MostrarEv(ListaEval E);
+
 #endif // LISTAEVALUACIONES_H_INCLUDED

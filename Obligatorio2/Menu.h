@@ -10,4 +10,7 @@ void IngresaExpedienteM (ABBExp &AB, Expediente &E);
 
 void IngresaExpedienteARevisar (ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le);
 
+void EliminaExpediente (ABBExp &AB);
+
+void EliminaEval(ListaEval &Le);
 #endif // MENU_H_INCLUDED

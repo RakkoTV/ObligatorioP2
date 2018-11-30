@@ -17,8 +17,9 @@ do{
 printf("\nOpciones:\n");
 printf("\t1) Ingresar un Expediente\n");
 printf("\t2) Ver los Expedientes Ingresados\n");
-printf("\t3) Ingresar Expediente a Revisar\n");
-printf("Borrar un expediente");
+printf("\t3) Ver las Evaluaciones Ingresadas\n");
+printf("\t4) Ingresar Expediente a Revisar\n");
+printf("\t5) Borrar un expediente\n");
 printf("\t0) Salir\n");
 scanf("%d",&op);
 
