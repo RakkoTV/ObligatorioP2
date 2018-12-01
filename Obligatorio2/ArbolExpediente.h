@@ -37,6 +37,15 @@ void Borrar_Minimo (ABBExp &AB);
 //Borrar del Arbol de Expediente el numero ingresado
 void BorrarABB (int x , ABBExp &AB) ;
 
+//Verificar si esta vacio
+boolean ArbolVacio (ABBExp a);
+
+//Listar ExpedienteMenor
+void ListarExpedienteMenor(ABBExp AB);
+//Listar Expediente Mayor
+void ListarExpedienteMayor(ABBExp AB);
+
+
 
 
 

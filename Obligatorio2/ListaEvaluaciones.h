@@ -24,7 +24,10 @@ boolean VerificarFecha (ListaEval e, Fecha f);
 //Borra de Lista
 void BorrarEval (ListaEval &E, int n);
 
-//Muestra la Lista
-void MostrarEv(ListaEval E);
+//Muestra la Lista Inversa
+void ListarEvaInverso(ListaEval E);
 
+void ListarXcodigo(ListaEval E, int y);
+
+boolean ExisteEvalCod(ListaEval E,int e);
 #endif // LISTAEVALUACIONES_H_INCLUDED

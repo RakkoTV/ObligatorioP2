@@ -9,7 +9,9 @@ void IngresarEvaluacion (Evaluacion &Ev, int n,Fecha fe){
     int codigo;
     Ev.CodigoExpediente=n;
     Ev.f=fe;
+    fflush(stdin);
     printf("\n\tIngrese la descripcion de la evaluacion:\n\t ");
+    strcrear(Ev.desc);
     scan(Ev.desc);
     printf("Ingrese:\n\t 1-Satifactoria\n\t 2-Incompleta\n\t 3-Pendiente\n");
     fflush(stdin);
@@ -41,5 +43,27 @@ return Darmes(EV.f);
 
 int DarAnoEvaluacion (Evaluacion EV){
 return Darano(EV.f);
+}
+
+
+void MostrarEv(Evaluacion E)
+{
+  printf("\nLa Fecha de la revision es: ");
+  MostrarFecha(E.f);
+  printf("\nEl Codigo es: ");
+  printf("%d",E.CodigoExpediente);
+  printf("\nDescripcion: ");
+  print(E.desc);
+  printf("\nEvaluacion: ");
+  switch (E.e){
+
+  case SATISFACTORIA: printf("Satisfactoria");
+  break;
+  case INCOMPLETA: printf("Incompleta");
+  break;
+  case PENDIENTE: printf("Pendiente");
+  break;
+   }
+
 }
 

@@ -77,9 +77,7 @@ void Orden(ABBExp AB)
 
         Orden(AB->hder);
     }
-    else
-        //VER XQ SE IMPRIME 2 VECES
-        printf("\n\tNo hay Expedientes para Mostrar\n");
+
 }
 
 void PostOrden(ABBExp AB)
@@ -150,3 +148,35 @@ Expediente Minimo (ABBExp AB)
  else
  return Minimo (AB-> hizq);
 }
+
+
+boolean ArbolVacio (ABBExp a)
+{
+	boolean es = FALSE;
+	if(a == NULL)
+	   es = TRUE;
+
+	return es;
+}
+
+
+void ListarExpedienteMenor(ABBExp AB)
+{
+ if (AB -> hizq == NULL)
+  MostrarExpediente(AB->info);
+ else
+ return ListarExpedienteMenor (AB-> hizq);
+}
+
+void ListarExpedienteMayor(ABBExp AB)
+{
+    if(AB->hder == NULL)
+    MostrarExpediente(AB->info);
+    else
+    return ListarExpedienteMayor(AB->hder);
+
+}
+
+
+
+

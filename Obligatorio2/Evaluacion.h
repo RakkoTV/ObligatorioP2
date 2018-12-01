@@ -22,7 +22,7 @@ int DarMesEvaluacion (Evaluacion EV);
 int DarAnoEvaluacion (Evaluacion EV);
 
 
-
+void MostrarEv(Evaluacion E);
 
 #endif // EVALUACION_H_INCLUDED
 

@@ -1,7 +1,7 @@
 #include "Menu.h"
 
 
-void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le)
+void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le, int n)
 {
     switch(opcion)
     {
@@ -14,16 +14,23 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
         break;}
 
         case 2:
-
         {
+            if (ArbolVacio(AB)==FALSE)
             ListarExpedientes(AB);
+            else
+                printf("El arbol esta vacia");
 
         break;}
 
         case 3:
             {
-               MostrarEv(Le);
+                if (EsVacia(Le)==FALSE){
+                  ListarEvaInverso(Le);
+                }
+                else
+                    printf("No hay Evaluaciones disponibles.");
             break;}
+
 
         case 4:
             {
@@ -33,39 +40,55 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
 
         case 5:
             {
+                printf("\n\tIngrese un numero de expediente: ");
+                fflush(stdin);
+                scanf("%d",&n);
+                EliminaExpediente (AB,n);
+                EliminaEval(Le,n);
+            break;
+            }
+        case 6:
+            {
+                MostrarMayorExpediente(AB);
+                break;
+            }
+        case 7:
+            {
+                 MostrarMenorExpediete(AB);
+                 break;
+             }
+        case 8:
+            {
 
-                EliminaExpediente (AB);
-                EliminaEval(Le);
-            break;}
 
+                   printf("Ingrese un numero de Expediente");
+                   fflush(stdin);
+                   scanf("%d",&n);
+                    MostrarXcodigo(Le,n);
+                    break;
 
+            }
 
 
     }
 
 }
 
-void EliminaExpediente(ABBExp &AB)
+void EliminaExpediente(ABBExp &AB, int n)
 {
-                int n;
-                printf("\n\tIngrese un numero de expediente: ");
-                fflush(stdin);
-                scanf("%d",&n);
+
                 if (ExisteExp(AB,n)==TRUE)
                 {
                   BorrarABB(n,AB);
                 }
                 else
-                    printf("\n\tNo existe expediente\n");
+                    printf("\n\t No existe expediente \n");
 
 }
 
-void EliminaEval(ListaEval &Le)
+void EliminaEval(ListaEval &Le, int n)
 {
-                int n;
-                printf("\n\tIngrese un numero de expediente: ");
-                fflush(stdin);
-                scanf("%d",&n);
+
 
                 BorrarEval (Le, n);
 
@@ -113,3 +136,32 @@ else
     printf("No existe expediente");
 
 }
+
+void MostrarMayorExpediente(ABBExp AB)
+{
+ if(ArbolVacio(AB)==FALSE)
+   ListarExpedienteMayor(AB);
+ else
+    printf("No existen expedientes");
+
+
+}
+
+
+void MostrarMenorExpediete(ABBExp AB)
+{
+   if(ArbolVacio(AB)==FALSE)
+   ListarExpedienteMenor(AB);
+    else
+    printf("No existen expedientes");
+
+}
+
+void  MostrarXcodigo(ListaEval E , int y)
+{
+    if(ExisteEvalCod(E,y)==TRUE)
+        ListarXcodigo(E,y);
+    else
+        printf("No existe codigo de expediente");
+}
+

@@ -29,17 +29,28 @@ boolean VerificarFecha (ListaEval e, Fecha f)
     if(EsVacia(e) == FALSE)
     {
          verificar=FALSE;
-        if ((Darano(f))>=(DarAnoEvaluacion(e->info)))
+        if ((Darano(f))>(DarAnoEvaluacion(e->info)))
         {
-            if ((Darmes(f))>=(DarMesEvaluacion(e->info)))
-                {
-                if ((Dardia(f))>=(DarDiaEvaluacion(e->info)))
-                {
-                                verificar=TRUE;
-                }
-                 }
+            verificar=TRUE;
         }
-    }
+            else
+            if ((Darano(f))==(DarAnoEvaluacion(e->info)))
+            {
+            if ((Darmes(f))>(DarMesEvaluacion(e->info)))
+                {
+                   verificar=TRUE;
+                }
+               else
+                 if ((Darmes(f))==(DarMesEvaluacion(e->info)))
+                {
+                  if ((Dardia(f))>=(DarDiaEvaluacion(e->info)))
+                  {
+                    verificar=TRUE;
+                  }
+                }
+
+           }
+     }
 return verificar;
 }
 
@@ -60,22 +71,57 @@ if (E != NULL)
  }
 }
 
+void ListarEvaInverso(ListaEval E)
+{
 
-void MostrarEv(ListaEval E)
-{
- while (E != NULL)
-{
-  printf("\nLa Fecha de la revision es: ");
-  printf("%d",DarDiaEvaluacion(E ->info));
-  printf("/");
-  printf("%d",DarMesEvaluacion(E ->info));
-  printf("/");
-  printf("%d",DarAnoEvaluacion(E ->info));
-  printf("\nEl Codigo es: ");
-  printf("%d",DarcodigoEva(E ->info));
-  E = E -> sig;
+if (E->sig!=NULL){
+    MostrarEv(E->info);
+    ListarEvaInverso(E->sig);
 }
+    else
+        MostrarEv(E->info);
 }
+
+void ListarXcodigo(ListaEval E, int y)
+{
+
+    if (E !=NULL)
+        {
+
+            if(DarcodigoEva(E->info)==y)
+            {
+                 MostrarEv(E->info);
+                 return ListarXcodigo(E->sig,y);
+
+            }
+
+
+
+             }
+      else
+     return  ListarXcodigo(E->sig,y);
+
+}
+
+boolean ExisteEvalCod(ListaEval E,int e)
+{
+    boolean ex=FALSE;
+    while((E != NULL)&&(ex==FALSE))
+    {
+        if(e==DarcodigoEva(E->info))
+            ex=TRUE;
+            else
+            E=E->sig;
+
+    }
+    return ex;
+
+
+
+}
+
+
+
 
 
 
