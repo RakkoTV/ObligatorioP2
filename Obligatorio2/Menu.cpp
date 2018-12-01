@@ -62,9 +62,11 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
 
 
                    printf("Ingrese un numero de Expediente");
-                   fflush(stdin);
+
                    scanf("%d",&n);
+                   fflush(stdin);
                     MostrarXcodigo(Le,n);
+
                     break;
 
             }
@@ -159,8 +161,9 @@ void MostrarMenorExpediete(ABBExp AB)
 
 void  MostrarXcodigo(ListaEval E , int y)
 {
-    if(ExisteEvalCod(E,y)==TRUE)
+    if(ExisteEvalCod(E,y)==TRUE){
         ListarXcodigo(E,y);
+    }
     else
         printf("No existe codigo de expediente");
 }

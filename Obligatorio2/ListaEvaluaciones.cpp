@@ -94,12 +94,10 @@ void ListarXcodigo(ListaEval E, int y)
                  return ListarXcodigo(E->sig,y);
 
             }
-
-
-
-             }
-      else
+            else
      return  ListarXcodigo(E->sig,y);
+             }
+
 
 }
 
