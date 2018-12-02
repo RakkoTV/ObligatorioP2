@@ -10,7 +10,7 @@ ABBExp AB;
 Expediente E;
 crear(AB);
 CrearLista(Le);
-int n;
+int n, contador;
 
 int op=0;
 
@@ -24,11 +24,13 @@ printf("\t5) Borrar un expediente\n");
 printf("\t6) Mostrar Mayor Expediente\n");
 printf("\t7) Mostrar Menor Expediente\n");
 printf("\t8) Mostrar Revisiones Expedientes por Codigo\n");
+printf("\t9) Cantidad de expedientes por escribano\n");
+printf("\t10) Expedientes con Mayor Revisiones\n");
 
 printf("\t0) Salir\n");
 scanf("%d",&op);
 
-MostrarMenu(op,AB,E,Ev,Le,n);
+MostrarMenu(op,AB,E,Ev,Le,n,contador);
 
 
 }while(op!=0);

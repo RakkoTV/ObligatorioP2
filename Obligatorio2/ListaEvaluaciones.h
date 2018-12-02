@@ -30,4 +30,12 @@ void ListarEvaInverso(ListaEval E);
 void ListarXcodigo(ListaEval E, int y);
 
 boolean ExisteEvalCod(ListaEval E,int e);
+//Mayor cantidad de revisiones
+int MayorCantidadRev(ListaEval E);
+
+//Devolver Tipo de revision
+void ContarCantidadRevXTipo(ListaEval E);
+
+
+
 #endif // LISTAEVALUACIONES_H_INCLUDED

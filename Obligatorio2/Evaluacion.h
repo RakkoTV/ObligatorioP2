@@ -21,7 +21,7 @@ int DarMesEvaluacion (Evaluacion EV);
 
 int DarAnoEvaluacion (Evaluacion EV);
 
-
+int DartipoEvaluacion(Evaluacion E);
 void MostrarEv(Evaluacion E);
 
 #endif // EVALUACION_H_INCLUDED

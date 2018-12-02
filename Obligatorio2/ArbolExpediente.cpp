@@ -177,22 +177,26 @@ void ListarExpedienteMayor(ABBExp AB)
 
 }
 
-void ComparaEscribano(ABBExp AB, String s)
+int ContarEscribano(ABBExp AB, String s)
 {
-   String nom,ape;
+  String nom,ape;
    strcrear(ape);
-
+//
     strcrear(nom);
 
-    DarEscribano(AB->info, nom,ape);
+    if(AB==NULL)
+       return 0;
+       else
+       {
 
-       if(AB !=NULL)
-    {
-        Orden(AB->hizq);
-        if (streq(s,ape)){
-        MostrarExpediente(AB->info);
-        }
-        Orden(AB->hder);
-    }
+
+        DarEscribano(AB->info, nom,ape);
+        if((streq(s,ape)==TRUE))
+       return 1 + ContarEscribano(AB->hizq,s) + ContarEscribano(AB->hder,s);
+        else
+       return ContarEscribano(AB->hizq,s)+ContarEscribano(AB->hder,s);
+
+       }
 }
+
 

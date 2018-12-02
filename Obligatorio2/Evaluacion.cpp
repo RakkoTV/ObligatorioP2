@@ -67,3 +67,18 @@ void MostrarEv(Evaluacion E)
 
 }
 
+int DartipoEvaluacion(Evaluacion E)
+{   int Evaluacion;
+    switch(E.e)
+    {
+      case SATISFACTORIA: Evaluacion=1;
+                           break;
+     case  INCOMPLETA:   Evaluacion= 2;
+                           break;
+     case PENDIENTE:   Evaluacion= 3;
+                         break;
+    }
+
+      return Evaluacion;
+    }
+

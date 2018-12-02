@@ -119,7 +119,73 @@ boolean ExisteEvalCod(ListaEval E,int e)
 }
 
 
+int MayorCantidadRev(ListaEval E)
+{    ListaEval aux=E,aux2=E;
 
+    int CodigoMayor, Cantidad=0,Maximo=0, Codigoiter;
+    CodigoMayor=DarcodigoEva(E->info);
+   while(aux !=NULL)
+   {
+    Cantidad=0;
+    Codigoiter=DarcodigoEva(aux->info);
+        while( aux2 !=NULL)
+           {
+        if(DarcodigoEva(aux2->info)==Codigoiter)
+           Cantidad=1+Cantidad;
+           aux2=aux2->sig;
+
+          }
+          if (Cantidad>Maximo)
+            {
+           Maximo=Cantidad;
+            CodigoMayor=Codigoiter;
+       }
+       else
+
+        if(Cantidad == Maximo)
+       {
+
+           if (Codigoiter< CodigoMayor)
+              CodigoMayor=Codigoiter;
+
+       }
+       Cantidad=0;
+       aux=aux->sig;
+       aux2=aux;
+
+   }
+
+   return CodigoMayor;
+
+}
+
+void ContarCantidadRevXTipo(ListaEval E)
+{   int cantidadSat=0,cantidadInc=0,cantidadPen=0;
+
+    while(E !=NULL)
+    {
+
+
+    switch(DartipoEvaluacion(E->info))
+    {
+    case 1: cantidadSat++;
+            break;
+
+    case 2: cantidadInc++;
+            break;
+
+    case 3:cantidadPen++;
+            break;
+    }
+    E=E->sig;
+
+    }
+
+    printf("Cantidad de revisiones Satisfactorias: %d, \n Cantidad de revisiones Incompletas: %d, \n Cantidad de revisiones Pendientes %d",cantidadSat,cantidadInc,cantidadPen);
+
+
+
+}
 
 
 

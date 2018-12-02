@@ -1,7 +1,7 @@
 #include "Menu.h"
 
 
-void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le, int n)
+void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le, int n, int contador)
 {
     switch(opcion)
     {
@@ -75,11 +75,26 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
             {
                 String s;
                 strcrear(s);
-fflush(stdin);
+                fflush(stdin);
                 printf("ingese un apellido");
                 scan(s);
-                ComparaEscribano(AB,s);
+                printf("Cantidad de expedientes de escribano %d :" ,ContarEscribano(AB,s));
+                break;
+
+
             }
+        case 10:
+                 {
+
+
+                 printf("Expediente con Mayor cantidad de revisiones: %d",MayorCantidadRev(Le));
+                break;
+                 }
+        case 11:
+                 {
+                     ContarCantidadRevXTipo(Le);
+                     break;
+                 }
 
 
     }

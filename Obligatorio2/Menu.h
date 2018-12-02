@@ -4,7 +4,7 @@
 #include "ArbolExpediente.h"
 
 
-void MostrarMenu(int opcion,ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le, int n);
+void MostrarMenu(int opcion,ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval &Le, int n, int contador);
 
 void IngresaExpedienteM (ABBExp &AB, Expediente &E);
 
