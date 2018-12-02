@@ -50,11 +50,11 @@ void MostrarEv(Evaluacion E)
 {
   printf("\nLa Fecha de la revision es: ");
   MostrarFecha(E.f);
-  printf("\nEl Codigo es: ");
+  printf(" El Codigo es: ");
   printf("%d",E.CodigoExpediente);
-  printf("\nDescripcion: ");
+  printf(" Descripcion: ");
   print(E.desc);
-  printf("\nEvaluacion: ");
+  printf(" Evaluacion: ");
   switch (E.e){
 
   case SATISFACTORIA: printf("Satisfactoria");
