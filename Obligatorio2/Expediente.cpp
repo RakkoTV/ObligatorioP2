@@ -48,5 +48,5 @@ void DarEscribano(Expediente E, String &Nombre, String &Apellido)
 {
       DarNombre(E.Escri,Nombre);
       DarApellido(E.Escri,Apellido);
-
 }
+

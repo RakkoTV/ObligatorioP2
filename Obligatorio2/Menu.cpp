@@ -71,6 +71,16 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
 
             }
 
+        case 9:
+            {
+                String s;
+                strcrear(s);
+fflush(stdin);
+                printf("ingese un apellido");
+                scan(s);
+                ComparaEscribano(AB,s);
+            }
+
 
     }
 

@@ -44,7 +44,8 @@ boolean ArbolVacio (ABBExp a);
 void ListarExpedienteMenor(ABBExp AB);
 //Listar Expediente Mayor
 void ListarExpedienteMayor(ABBExp AB);
-
+//compara escribano
+void ComparaEscribano(ABBExp AB,String s);
 
 
 

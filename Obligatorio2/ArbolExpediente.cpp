@@ -177,6 +177,22 @@ void ListarExpedienteMayor(ABBExp AB)
 
 }
 
+void ComparaEscribano(ABBExp AB, String s)
+{
+   String nom,ape;
+   strcrear(ape);
 
+    strcrear(nom);
 
+    DarEscribano(AB->info, nom,ape);
+
+       if(AB !=NULL)
+    {
+        Orden(AB->hizq);
+        if (streq(s,ape)){
+        MostrarExpediente(AB->info);
+        }
+        Orden(AB->hder);
+    }
+}
 
