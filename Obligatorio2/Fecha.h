@@ -19,6 +19,10 @@ int Darano(Fecha f);
 int Darmes(Fecha f);
 //Selectora para dia
 int Dardia(Fecha f);
-
+//Devuelve si la fecha uno es menor que la 2
+boolean FechaMenor(Fecha f1, Fecha f2);
+//Devuelve si la fecha uno es mayor que la 2
+boolean FechaMayor(Fecha f1, Fecha f2);
+//Fecha Valida
 boolean FechaValida(Fecha f);
 #endif // FECHA_H_INCLUDED

@@ -34,59 +34,89 @@ int Dardia(Fecha f)
 }
 
 boolean FechaValida (Fecha f)
-{boolean esbiciesto=FALSE;
- boolean valido=TRUE;
-
-
- if (f.ano % 4==0)
-    esbiciesto=TRUE;
-
- if((f.mes >=1)&&(f.mes <=12))
-     valido=TRUE;
-     else
-     valido=FALSE;
-if(valido==TRUE)
-{
-
-switch(f.mes)
+ {
+     boolean valido = FALSE;
+     switch (f.mes)
      {
-     case 1:
-     case 3:
-     case 5:
-     case 7:
-     case 8:
-     case 10:
-     case 12 :  if((f.dia>=1) && (f.dia<=31))
-                 valido=TRUE;
-                 else
-                 valido=FALSE;
-                 break;
+         case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+             if (f.dia >=1 && f.dia <=31)
+                {
+                 valido = TRUE;
+                }
 
-     case 4:
-     case 6:
-     case 9: if((f.dia>=1) && (f.dia<=30))
-               valido=TRUE;
-               else
-               valido=FALSE;
-               break;
-     case 2: if((esbiciesto==TRUE)&&((f.dia>=1) && (f.dia<=28)))
-               valido=TRUE;
-               else
-               if((esbiciesto==FALSE)&&((f.dia>=1) && (f.dia<=31)))
-               valido=TRUE;
-               else
-                valido=FALSE;
-               break;
+          break;
 
-     }
+          case 4: case 6: case 9: case 11:
+                   if (f.dia >=1 && f.dia <=30)
+                        {
+                        valido = TRUE;
+                        }
+          break;
 
-     return valido;
-
+          case 2:  if (f.ano % 4 == 0)
+                    {
+                        if (f.dia >=1 && f.dia <=29)
+                        {
+                            valido = FALSE;
+                        }
+                    }
+            else
+                {
+                    if (f.dia >=1 && f.dia <=28)
+                    {
+                      valido = TRUE;
+                    }
+                }
+        }
+            return valido;
 }
 
 
 
 
+//Devuelve si la fecha uno es menor que la 2
+boolean FechaMenor(Fecha f1, Fecha f2)
+{
+    boolean EsMenor=FALSE;
 
+    if(f1.ano<f2.ano)
+        {
+        EsMenor=TRUE;
+        }
+        else
+            if((f1.ano==f2.ano) && (f1.mes < f2.mes)) // seria solo menor y no iriria el dia ver si tiene un bug
+                {
+                EsMenor=TRUE;
+                }
+                else
+                    if((f1.mes == f2.mes)&&(f1.dia < f2.dia))
+                    {
+                        EsMenor=TRUE;
+                    }
+    return EsMenor;
+
+}
+
+
+
+boolean FechaMayor(Fecha f1, Fecha f2)
+{
+    boolean EsMayor=FALSE;
+
+    if(f1.ano>f2.ano)
+        {
+        EsMayor=TRUE;
+        }
+        else
+            if((f1.ano==f2.ano) && (f1.mes > f2.mes)) // seria solo menor y no iriria el dia ver si tiene un bug
+                {
+                EsMayor=TRUE;
+                }
+                else
+                    if((f1.mes == f2.mes)&&(f1.dia > f2.dia))
+                    {
+                        EsMayor=TRUE;
+                    }
+    return EsMayor;
 
 }

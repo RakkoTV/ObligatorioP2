@@ -7,29 +7,35 @@ int DarcodigoEva(Evaluacion Ev)
 
 void IngresarEvaluacion (Evaluacion &Ev, int n,Fecha fe){
     int codigo;
-    Ev.CodigoExpediente=n;
+
     Ev.f=fe;
-    fflush(stdin);
-    printf("\n\tIngrese la descripcion de la evaluacion:\n\t ");
-    strcrear(Ev.desc);
-    scan(Ev.desc);
-    printf("Ingrese:\n\t 1-Satifactoria\n\t 2-Incompleta\n\t 3-Pendiente\n");
-    fflush(stdin);
-    scanf("%d",&codigo);
+    if(FechaValida(fe) == TRUE)
+    {
+        Ev.CodigoExpediente=n;
+        fflush(stdin);
+        printf("\n\tIngrese la descripcion de la evaluacion:\n\t ");
+        strcrear(Ev.desc);
+        scan(Ev.desc);
+        printf("Ingrese:\n\t 1-Satifactoria\n\t 2-Incompleta\n\t 3-Pendiente\n");
+        fflush(stdin);
+        scanf("%d",&codigo);
 
-    switch (codigo){
+        switch (codigo){
 
-    case 1:
-            Ev.e=SATISFACTORIA;
-    break;
-    case 2:
-            Ev.e=INCOMPLETA;
-    break;
-    case 3:
-            Ev.e=PENDIENTE;
-    break;
+        case 1:
+                Ev.e=SATISFACTORIA;
+        break;
+        case 2:
+                Ev.e=INCOMPLETA;
+        break;
+        case 3:
+                Ev.e=PENDIENTE;
+        break;
+        }
+
     }
-
+    else
+        printf("\n\tLa Fecha Ingresada es Incorrecta");
 }
 
 int DarDiaEvaluacion (Evaluacion EV){

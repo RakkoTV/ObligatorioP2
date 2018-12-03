@@ -14,6 +14,7 @@ void EliminaExpediente (ABBExp &AB, int n);
 
 void EliminaEval(ListaEval &Le, int n);
 
+void BorrarExp(int n, ABBExp &AB ,ListaEval &Le);
 
 void MostrarMayorExpediente(ABBExp AB);
 
@@ -21,7 +22,8 @@ void MostrarMenorExpediete(ABBExp AB);
 
 void  MostrarXcodigo(ListaEval E, int y);
 
+void Cantexpxescribano(ABBExp &AB);
 
-
+void MostrarRevExpxCodigo(ListaEval &Le, int n);
 
 #endif // MENU_H_INCLUDED

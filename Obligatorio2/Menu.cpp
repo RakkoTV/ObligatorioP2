@@ -40,11 +40,7 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
 
         case 5:
             {
-                printf("\n\tIngrese un numero de expediente: ");
-                fflush(stdin);
-                scanf("%d",&n);
-                EliminaExpediente (AB,n);
-                EliminaEval(Le,n);
+            BorrarExp(n,AB,Le);
             break;
             }
         case 6:
@@ -59,30 +55,16 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
              }
         case 8:
             {
-
-
-                   printf("Ingrese un numero de Expediente");
-
-                   scanf("%d",&n);
-                   fflush(stdin);
-                    MostrarXcodigo(Le,n);
-
+                    MostrarRevExpxCodigo(Le,n);
                     break;
-
             }
 
         case 9:
             {
-                String s;
-                strcrear(s);
-                fflush(stdin);
-                printf("ingese un apellido");
-                scan(s);
-                printf("Cantidad de expedientes de escribano %d :" ,ContarEscribano(AB,s));
-                break;
 
+                Cantexpxescribano(AB);
 
-            }
+            break;}
         case 10:
                  {
 
@@ -98,6 +80,36 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
 
 
     }
+
+}
+
+void BorrarExp(int n, ABBExp &AB ,ListaEval &Le)
+{
+        printf("\n\tIngrese un numero de expediente: ");
+        fflush(stdin);
+        scanf("%d",&n);
+        EliminaExpediente (AB,n);
+        EliminaEval(Le,n);
+}
+
+
+void MostrarRevExpxCodigo(ListaEval &Le, int n)
+{
+       printf("Ingrese un numero de Expediente");
+
+       scanf("%d",&n);
+       fflush(stdin);
+       MostrarXcodigo(Le,n);
+}
+
+void Cantexpxescribano(ABBExp &AB)
+{
+                String s;
+                strcrear(s);
+                fflush(stdin);
+                printf("ingese un apellido");
+                scan(s);
+                printf("Cantidad de expedientes de escribano: %d " ,ContarEscribano(AB,s));
 
 }
 

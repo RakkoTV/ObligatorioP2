@@ -26,31 +26,32 @@ void InsFront(ListaEval &E, Evaluacion Ev)
 boolean VerificarFecha (ListaEval e, Fecha f)
 {
     boolean verificar=TRUE;
-    if(EsVacia(e) == FALSE)
-    {
-         verificar=FALSE;
-        if ((Darano(f))>(DarAnoEvaluacion(e->info)))
-        {
-            verificar=TRUE;
-        }
-            else
-            if ((Darano(f))==(DarAnoEvaluacion(e->info)))
-            {
-            if ((Darmes(f))>(DarMesEvaluacion(e->info)))
-                {
-                   verificar=TRUE;
-                }
-               else
-                 if ((Darmes(f))==(DarMesEvaluacion(e->info)))
-                {
-                  if ((Dardia(f))>=(DarDiaEvaluacion(e->info)))
-                  {
-                    verificar=TRUE;
-                  }
-                }
 
-           }
-     }
+        if(EsVacia(e) == FALSE)
+        {
+             verificar=FALSE;
+            if ((Darano(f))>(DarAnoEvaluacion(e->info)))
+            {
+                verificar=TRUE;
+            }
+                else
+                if ((Darano(f))==(DarAnoEvaluacion(e->info)))
+                {
+                if ((Darmes(f))>(DarMesEvaluacion(e->info)))
+                    {
+                       verificar=TRUE;
+                    }
+                   else
+                     if ((Darmes(f))==(DarMesEvaluacion(e->info)))
+                    {
+                      if ((Dardia(f))>=(DarDiaEvaluacion(e->info)))
+                      {
+                        verificar=TRUE;
+                      }
+                    }
+
+               }
+        }
 return verificar;
 }
 
