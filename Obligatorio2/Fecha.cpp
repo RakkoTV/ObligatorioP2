@@ -120,3 +120,11 @@ boolean FechaMayor(Fecha f1, Fecha f2)
     return EsMayor;
 
 }
+
+void Levantar_Fecha (Fecha &F, FILE * f)
+{
+    fread (&F.ano, sizeof(int), 1, f);
+    fread (&F.mes, sizeof(int), 1, f);
+    fread (&F.dia, sizeof(int), 1, f);
+
+}

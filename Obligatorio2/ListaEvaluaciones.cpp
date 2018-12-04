@@ -23,6 +23,24 @@ void InsFront(ListaEval &E, Evaluacion Ev)
 	E = aux;
 }
 
+void InsBack(ListaEval &E, Evaluacion Ev)
+{
+	ListaEval aux;
+	aux = E;
+
+	while(aux!=NULL){
+		if(aux->sig == NULL){
+			aux->sig = new NodoEval;
+			aux->sig->info = Ev;
+			aux->sig->sig = NULL;
+			aux = aux->sig->sig;
+		}else{
+			aux = aux->sig;
+		}
+	}
+}
+
+
 boolean VerificarFecha (ListaEval e, Fecha f)
 {
     boolean verificar=TRUE;
@@ -201,6 +219,31 @@ void MostrarXFecha (ListaEval E,Fecha F1,Fecha F2)
 
 }
 
+void Levantar_Lista (ListaEval E,String nomArch)
+{
+    FILE * f=fopen(nomArch,"rb");
+    Evaluacion Ev;
+    Levantar_Evaluacion (Ev,f);
+    while(!feof(f))
+    {
+        InsFront(E,Ev);
+        Levantar_Evaluacion (Ev,f);
+
+    }
+    fclose(f);
+
+
+}
+
+
+void Levantar_Evaluacion (Evaluacion Ev, FILE *f)
+{
+Levantar_Fecha (Ev.f,f);
+fread(&Ev.CodigoExpediente,sizeof(int),1,f);
+Levantar_String(Ev.desc,f);
+fread(&Ev.e,sizeof(int),1,f);
+
+}
 
 
 
