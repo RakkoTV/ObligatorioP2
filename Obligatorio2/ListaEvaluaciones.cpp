@@ -244,7 +244,24 @@ Levantar_String(Ev.desc,f);
 fread(&Ev.e,sizeof(int),1,f);
 
 }
+void Bajar_ListaEvaluaciones(ListaEval E , String nomArch){
+    FILE * f = fopen (nomArch, "wb");
+    while (E != NULL)
+    {
+        Bajar_Revision(E -> info, f);
+        E = E -> sig;
+    }
+    fclose (f);
+}
 
+
+void Bajar_Revision (Evaluacion Ev, FILE * f)
+{
+    Bajar_Fecha(Ev.f,f);
+    fwrite (&Ev.CodigoExpediente, sizeof(int), 1, f);
+    Bajar_String (Ev.desc, f);
+    fwrite (&Ev.e, sizeof(int), 1, f);
+}
 
 
 

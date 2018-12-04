@@ -41,8 +41,8 @@ void ContarCantidadRevXTipo(ListaEval E);
 
  void Levantar_Evaluacion (Evaluacion Ev, FILE *f);
  void Levantar_Lista (ListaEval E,String nomArch);
-
-
+void Bajar_Revision (Evaluacion Ev, FILE * f);
+void Bajar_ListaEvaluaciones (ListaEval E , String nomArch);
 
 
 

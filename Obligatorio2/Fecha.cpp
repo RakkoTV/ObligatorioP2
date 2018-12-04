@@ -128,3 +128,10 @@ void Levantar_Fecha (Fecha &F, FILE * f)
     fread (&F.dia, sizeof(int), 1, f);
 
 }
+
+void Bajar_Fecha (Fecha F, FILE * f)
+{
+    fwrite (&F.ano, sizeof(int), 1, f);
+    fwrite (&F.mes, sizeof(int), 1, f);
+    fwrite (&F.dia, sizeof(int), 1, f);
+}

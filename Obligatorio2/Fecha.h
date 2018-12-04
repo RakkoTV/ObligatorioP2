@@ -27,4 +27,5 @@ boolean FechaMayor(Fecha f1, Fecha f2);
 boolean FechaValida(Fecha f);
 
 void Levantar_Fecha (Fecha &F, FILE * f);
+void Bajar_Fecha (Fecha F, FILE * f);
 #endif // FECHA_H_INCLUDED
