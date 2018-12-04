@@ -47,6 +47,14 @@ void ListarExpedienteMayor(ABBExp AB);
 //compara escribano
 int ContarEscribano(ABBExp AB,String s);
 
+void Bajar_Expediente(ABBExp AB, FILE * f);
+
+void Bajar_ABB (ABBExp AB, String nomArch);
+
+void Levantar_Expediente (ABBExp &AB, String nomArch);
+
+void Subir_Expediente(ABBExp &AB, FILE * f);
+
 
 
 

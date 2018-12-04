@@ -78,8 +78,24 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
                      break;
                  }
 
+        case 12:
+                {
+                    Fecha f1,f2;
+                    printf("Ingrese la primer Fecha");
+                    CargarFecha(f1);
+                    printf("Ingrese la segunda fecha");
+                    CargarFecha(f2);
+                    if (FechaMenor(f1,f2))
+                    {
+
+                    }
+
+                }
+
 
     }
+
+
 
 }
 

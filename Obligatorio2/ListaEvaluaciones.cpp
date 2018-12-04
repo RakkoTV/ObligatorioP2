@@ -189,6 +189,19 @@ void ContarCantidadRevXTipo(ListaEval E)
 }
 
 
+void MostrarXFecha (ListaEval E,Fecha F1,Fecha F2)
+{
+
+
+
+
+
+
+
+
+}
+
+
 
 
 
