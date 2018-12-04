@@ -23,6 +23,8 @@ int DarAnoEvaluacion (Evaluacion EV);
 
 int DartipoEvaluacion(Evaluacion E);
 void MostrarEv(Evaluacion E);
+//Devuelove la Fehca
+Fecha DarFechaEv(Evaluacion E);
 
 #endif // EVALUACION_H_INCLUDED
 

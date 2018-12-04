@@ -88,3 +88,8 @@ int DartipoEvaluacion(Evaluacion E)
       return Evaluacion;
     }
 
+Fecha DarFechaEv(Evaluacion E)
+        {
+        return E.f;
+        }
+
