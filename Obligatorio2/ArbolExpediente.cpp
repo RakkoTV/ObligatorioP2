@@ -5,6 +5,7 @@ void crear(ABBExp &ab)
 {
 ab=NULL;
 }
+
 boolean ExisteExp(ABBExp AB, int n)
 {
    if(AB==NULL)

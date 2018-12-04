@@ -6,8 +6,6 @@
 int main()
 {
 
-
-
 Evaluacion Ev;
 ListaEval Le;
 ABBExp AB;
@@ -43,6 +41,8 @@ printf("\t11) Cantidad de Evaluaciones de cada tipo\n");
 printf("\t12) Mostrar por rango de fechas\n");
 
 printf("\t0) Salir\n");
+
+printf("\nIngrese la opcion deseada: ");
 scanf("%d",&op);
 
 MostrarMenu(op,AB,E,Ev,Le,n,contador);

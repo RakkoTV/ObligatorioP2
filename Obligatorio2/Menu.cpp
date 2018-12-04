@@ -18,7 +18,7 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
             if (ArbolVacio(AB)==FALSE)
             ListarExpedientes(AB);
             else
-                printf("El arbol esta vacia");
+                printf("No hay Expedientes Ingresados");
 
         break;}
 
@@ -124,12 +124,12 @@ void Cantexpxescribano(ABBExp &AB)
 void EliminaExpediente(ABBExp &AB, int n)
 {
 
-                if (ExisteExp(AB,n)==TRUE)
+                if (ExisteExp(AB,n)==FALSE)
                 {
-                  BorrarABB(n,AB);
+                    printf("\n\t No exetwetwerwerewAAAAAAAAAAAAAiste expediente \n");
                 }
                 else
-                    printf("\n\t No existe expediente \n");
+                    BorrarABB(n,AB);
 
 }
 
@@ -167,6 +167,7 @@ int n;
 Fecha f;
 
 printf("\n\tIngrese un numero de expediente a Revisar: ");
+fflush(stdin);
 scanf("%d",&n);
 if (ExisteExp(AB,n)==TRUE)
 {
