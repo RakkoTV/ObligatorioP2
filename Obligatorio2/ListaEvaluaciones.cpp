@@ -23,24 +23,6 @@ void InsFront(ListaEval &E, Evaluacion Ev)
 	E = aux;
 }
 
-void InsBack(ListaEval &E, Evaluacion Ev)
-{
-	ListaEval aux;
-	aux = E;
-
-	while(aux!=NULL){
-		if(aux->sig == NULL){
-			aux->sig = new NodoEval;
-			aux->sig->info = Ev;
-			aux->sig->sig = NULL;
-			aux = aux->sig->sig;
-		}else{
-			aux = aux->sig;
-		}
-	}
-}
-
-
 boolean VerificarFecha (ListaEval e, Fecha f)
 {
     boolean verificar=TRUE;
@@ -207,42 +189,114 @@ void ContarCantidadRevXTipo(ListaEval E)
 }
 
 
-void MostrarXFecha (ListaEval E,Fecha F1,Fecha F2)
+int MostrarCantXFecha (ListaEval E,Fecha F1,Fecha F2)
 {
 
+    int contar=0;
+    while(E!=NULL)
+    {
+
+        if(FechaMenor(DarFechaEv(E->info), F2)==TRUE)
+        {
+            if(FechaMenor(DarFechaEv(E->info), F1)==FALSE)
+            {
+                contar++;
+            }
+        }
+        if(FechasIguales(DarFechaEv(E->info), F2)==TRUE )
+        {
+            contar++;
+        }
+
+        E=E->sig;
+    }
+
+
+    return contar;
+
+}
 
 
 
+void InsBack(ListaEval &E, Evaluacion Ev)
+
+{
+
+	ListaEval aux;
+
+	aux = E;
 
 
 
+	while(aux!=NULL){
+
+		if(aux->sig == NULL){
+
+			aux->sig = new NodoEval;
+
+			aux->sig->info = Ev;
+
+			aux->sig->sig = NULL;
+
+			aux = aux->sig->sig;
+
+		}else{
+
+			aux = aux->sig;
+
+		}
+
+	}
 
 }
 
 void Levantar_Lista (ListaEval E,String nomArch)
+
 {
+
     FILE * f=fopen(nomArch,"rb");
+
     Evaluacion Ev;
+
     Levantar_Evaluacion (Ev,f);
+
     while(!feof(f))
+
     {
+
         InsFront(E,Ev);
+
         Levantar_Evaluacion (Ev,f);
 
+
+
     }
+
     fclose(f);
+
+
+
 
 
 }
 
 
+
+
+
 void Levantar_Evaluacion (Evaluacion Ev, FILE *f)
+
 {
+
 Levantar_Fecha (Ev.f,f);
+
 fread(&Ev.CodigoExpediente,sizeof(int),1,f);
+
 Levantar_String(Ev.desc,f);
+
 fread(&Ev.e,sizeof(int),1,f);
 
+<<<<<<< HEAD
 }
 void Bajar_ListaEvaluaciones(ListaEval E , String nomArch){
     FILE * f = fopen (nomArch, "wb");
@@ -254,6 +308,12 @@ void Bajar_ListaEvaluaciones(ListaEval E , String nomArch){
     fclose (f);
 }
 
+=======
+
+
+}
+
+>>>>>>> origin/master
 
 void Bajar_Revision (Evaluacion Ev, FILE * f)
 {

@@ -20,9 +20,13 @@ int op=0;
 
 do{
 //Levantar_Expediente (AB,"Expediente.dat");
+
 FILE * f=fopen("Evaluacion.dat","wb");
+
 fclose(f);
+
 Levantar_Lista (Le,"Evaluacion.dat");
+
 
 printf("\nOpciones:\n");
 printf("\t1) Ingresar un Expediente\n");

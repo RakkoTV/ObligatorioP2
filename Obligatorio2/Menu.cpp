@@ -80,16 +80,8 @@ void MostrarMenu(int opcion, ABBExp &AB, Expediente &E,Evaluacion &Ev,ListaEval 
 
         case 12:
                 {
-                    Fecha f1,f2;
-                    printf("Ingrese la primer Fecha");
-                    CargarFecha(f1);
-                    printf("Ingrese la segunda fecha");
-                    CargarFecha(f2);
-                    if (FechaMenor(f1,f2))
-                    {
-
-                    }
-
+                    MostrarCantidadEntreFechas(Le);
+                   break;
                 }
 
 
@@ -221,3 +213,14 @@ void  MostrarXcodigo(ListaEval E , int y)
         printf("No existe codigo de expediente");
 }
 
+void MostrarCantidadEntreFechas(ListaEval E)
+{
+                    Fecha f1,f2;
+                    printf("Ingrese la primer Fecha");
+                    CargarFecha(f1);
+                    printf("Ingrese la segunda fecha");
+                    CargarFecha(f2);
+                    printf("\n\tLa cantidad de Evaluaciones encontradas es: ");
+                    printf ("%d",MostrarCantXFecha(E,f1,f2));
+                    printf("\n");
+}

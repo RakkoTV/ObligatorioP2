@@ -121,6 +121,17 @@ boolean FechaMayor(Fecha f1, Fecha f2)
 
 }
 
+
+boolean FechasIguales(Fecha f1, Fecha f2)
+{
+    boolean Es=FALSE;
+    if((f1.ano==f2.ano) && (f1.mes == f2.mes)&&(f1.dia == f2.dia))
+    {
+    Es=TRUE;
+    }
+     return Es;
+}
+
 void Levantar_Fecha (Fecha &F, FILE * f)
 {
     fread (&F.ano, sizeof(int), 1, f);

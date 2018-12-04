@@ -26,4 +26,5 @@ void Cantexpxescribano(ABBExp &AB);
 
 void MostrarRevExpxCodigo(ListaEval &Le, int n);
 
+void MostrarCantidadEntreFechas(ListaEval E);
 #endif // MENU_H_INCLUDED

@@ -18,9 +18,6 @@ boolean EsVacia(ListaEval E);
 //Insertar adelante
 void InsFront(ListaEval &E, Evaluacion Ev);
 
-
-void InsBack(ListaEval &E, Evaluacion Ev);
-
 //Verificar Fecha
 boolean VerificarFecha (ListaEval e, Fecha f);
 
@@ -39,11 +36,17 @@ int MayorCantidadRev(ListaEval E);
 //Devolver Tipo de revision
 void ContarCantidadRevXTipo(ListaEval E);
 
+int MostrarCantXFecha (ListaEval E,Fecha F1,Fecha F2);
+
+void InsBack(ListaEval &E, Evaluacion Ev);
  void Levantar_Evaluacion (Evaluacion Ev, FILE *f);
  void Levantar_Lista (ListaEval E,String nomArch);
+<<<<<<< HEAD
 void Bajar_Revision (Evaluacion Ev, FILE * f);
 void Bajar_ListaEvaluaciones (ListaEval E , String nomArch);
 
+=======
+>>>>>>> origin/master
 
 
 #endif // LISTAEVALUACIONES_H_INCLUDED
