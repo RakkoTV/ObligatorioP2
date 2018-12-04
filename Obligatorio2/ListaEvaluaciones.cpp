@@ -296,7 +296,7 @@ Levantar_String(Ev.desc,f);
 
 fread(&Ev.e,sizeof(int),1,f);
 
-<<<<<<< HEAD
+
 }
 void Bajar_ListaEvaluaciones(ListaEval E , String nomArch){
     FILE * f = fopen (nomArch, "wb");
@@ -308,12 +308,11 @@ void Bajar_ListaEvaluaciones(ListaEval E , String nomArch){
     fclose (f);
 }
 
-=======
 
 
-}
 
->>>>>>> origin/master
+
+
 
 void Bajar_Revision (Evaluacion Ev, FILE * f)
 {
