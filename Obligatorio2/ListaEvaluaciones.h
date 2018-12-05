@@ -39,8 +39,8 @@ void ContarCantidadRevXTipo(ListaEval E);
 int MostrarCantXFecha (ListaEval E,Fecha F1,Fecha F2);
 
 void InsBack(ListaEval &E, Evaluacion Ev);
- void Levantar_Evaluacion (Evaluacion Ev, FILE *f);
- void Levantar_Lista (ListaEval E,String nomArch);
+ void Levantar_Evaluacion (Evaluacion &Ev, FILE *f);
+ void Levantar_Lista (ListaEval &E,String nomArch);
 
 void Bajar_Revision (Evaluacion Ev, FILE * f);
 void Bajar_ListaEvaluaciones (ListaEval E , String nomArch);

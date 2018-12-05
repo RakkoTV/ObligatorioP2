@@ -51,11 +51,10 @@ void Bajar_Expediente(ABBExp AB, FILE * f);
 
 void Bajar_ABB (ABBExp AB, String nomArch);
 
-void Levantar_Expediente (ABBExp &AB, String nomArch);
+void Levantar_Expediente (Expediente &exp, FILE * f);
 
-void Subir_Expediente(ABBExp &AB, FILE * f);
-
-
+void Levantar_ABB (ABBExp &AB, String nomArch);
+void Bajar_ABB_Aux(ABBExp AB,FILE * f);
 
 
 #endif // ARBOLEXPEDIENTE_H_INCLUDED

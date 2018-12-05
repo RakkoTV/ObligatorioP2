@@ -32,3 +32,16 @@ void DarApellido(Escribano ES, String &S )
   strcop(S,ES.Apellido);
 }
 
+void Bajar_Escribano(Escribano escri, FILE *f)
+{
+  Bajar_String(escri.Nombre,f);
+  Bajar_String(escri.Apellido,f);
+}
+
+void Levantar_Escribano(Escribano &escri, FILE *f)
+{
+  strcrear(escri.Nombre);
+  Levantar_String(escri.Nombre,f);
+  strcrear(escri.Apellido);
+  Levantar_String(escri.Apellido,f);
+}

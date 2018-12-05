@@ -19,4 +19,7 @@ void DarNombre(Escribano ES, String &S );
 //dar apellido
 void DarApellido(Escribano ES, String &S );
 
+void Bajar_Escribano(Escribano escri, FILE *f);
+void Levantar_Escribano(Escribano &escri, FILE *f);
+
 #endif // ESCRIBANO_H_INCLUDED

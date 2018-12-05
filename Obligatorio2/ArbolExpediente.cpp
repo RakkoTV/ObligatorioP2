@@ -200,84 +200,61 @@ int ContarEscribano(ABBExp AB, String s)
        }
 }
 
-void Bajar_Expediente(ABBExp AB, FILE * f)
+void Bajar_Expediente(Expediente e, FILE * f)
 {
-String s,s1,s2;
-int n,n1;
-if (AB != NULL)
-{
-n=DarcodigoExp(AB->info);
-fwrite (&n, sizeof (int), 1, f);
-strcrear(s);
-DarCaratula(AB->info,s);
-Bajar_String(s,f);
-strcrear(s1);
-strcrear(s2);
-DarEscribano(AB->info,s1,s2);
-Bajar_String(s1,f);
-Bajar_String(s2,f);
-n1=DarCantPaginas(AB->info);
-fwrite(&n1,sizeof(int),1,f);
 
-Bajar_Expediente(AB->hizq, f);
-Bajar_Expediente(AB->hder, f);
+fwrite(&e.codigo,sizeof(int),1,f);
+Bajar_String(e.Caratula,f);
+Bajar_Escribano(e.Escri,f);
+fwrite(&e.CantPaginas,sizeof(int),1,f);
+
 }
-}
+
+
 void Bajar_ABB (ABBExp AB, String nomArch)
 {
 FILE * f = fopen (nomArch, "wb");
-Bajar_Expediente(AB, f);
+Bajar_ABB_Aux(AB,f);
 fclose (f);
 }
-//void Subir_Expediente(ABBExp &AB, FILE * f)
-//{
-//String s,s1,s2;
-//int n,n1;
-//if (f!=NULL)
-//{
-////n=DarcodigoExp(AB->info);
-//fread(&n, sizeof (int), 1, f);
-////strcrear(s);
-//////DarCaratula(AB->info,s);
-////Levantar_String(s,f);
-////strcrear(s1);
-////strcrear(s2);
-//////DarEscribano(AB->info,s1,s2);
-////Levantar_String(s1,f);
-////Levantar_String(s2,f);
-//////n1=DarCantPaginas(AB->info);
-////fread(&n1,sizeof(int),1,f);
-//
-//Subir_Expediente(AB->hizq, f);
-//Subir_Expediente(AB->hder, f);
-//}
-//}
 
-void Levantar_Expediente (ABBExp &AB, String nomArch)
+void Bajar_ABB_Aux(ABBExp AB,FILE * f)
 {
-    String s,s1,s2;
-int n,n1;
-FILE * f = fopen (nomArch, "rb");
-//Subir_Expediente(AB,f);
-fread(&n, sizeof(int),1,f);
-while (!feof(f))
+if (AB != NULL)
+ {
+
+Bajar_Expediente(AB->info, f);
+Bajar_ABB_Aux (AB -> hizq, f);
+Bajar_ABB_Aux (AB -> hder, f);
+}
+}
+
+void Levantar_Expediente (Expediente &e, FILE * f)
 {
-
-IngresarExpedienteABB(AB,AB->info);
-strcrear(s);
-Levantar_String(s,f);
-IngresarExpedienteABB(AB,AB->info);
-strcrear(s1);
-Levantar_String(s1,f);
-IngresarExpedienteABB(AB,AB->info);
-strcrear(s2);
-Levantar_String(s2,f);
-IngresarExpedienteABB(AB,AB->info);
-fread(&n1,sizeof(int),1,f);
-IngresarExpedienteABB(AB,AB->info);
-
+fread(&e.codigo,sizeof(int),1,f);
+strcrear(e.Caratula);
+Levantar_String(e.Caratula,f);
+Levantar_Escribano(e.Escri,f);
+fread(&e.CantPaginas,sizeof(int),1,f);
 
 }
-fclose (f);
+
+
+
+
+
+void Levantar_ABB (ABBExp &AB, String nomArch)
+{
+ FILE * f = fopen (nomArch, "rb");
+Expediente exp;
+Levantar_Expediente(exp,f);
+
+ while (!feof(f))
+ {
+ IngresarExpedienteABB (AB, exp);
+Levantar_Expediente(exp,f);
+
+ }
+ fclose (f);
 }
 

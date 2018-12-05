@@ -19,11 +19,11 @@ int op=0;
 do{
 //Levantar_Expediente (AB,"Expediente.dat");
 
-FILE * f=fopen("Evaluacion.dat","wb");
-
-fclose(f);
-
-Levantar_Lista (Le,"Evaluacion.dat");
+//FILE * f=fopen("Evaluacion.dat","wb");
+//
+//fclose(f);
+ Levantar_Lista (Le,"Evaluacion.dat");
+ Levantar_ABB(AB,"Expediente.dat") ;
 
 
 printf("\nOpciones:\n");
@@ -39,6 +39,7 @@ printf("\t9) Cantidad de expedientes por escribano\n");
 printf("\t10) Expedientes con Mayor Revisiones\n");
 printf("\t11) Cantidad de Evaluaciones de cada tipo\n");
 printf("\t12) Mostrar por rango de fechas\n");
+printf("llamar");
 
 printf("\t0) Salir\n");
 
@@ -50,5 +51,7 @@ MostrarMenu(op,AB,E,Ev,Le,n,contador);
 
 }while(op!=0);
 Bajar_ListaEvaluaciones (Le , "Evaluacion.dat");
-Bajar_ABB (AB, "Expediente.dat");
+Bajar_ABB(AB,"Expediente.dat");
+
+//Bajar_ABB (AB, "Expediente.dat");
 }

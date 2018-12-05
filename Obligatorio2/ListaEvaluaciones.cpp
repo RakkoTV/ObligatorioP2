@@ -250,69 +250,34 @@ void InsBack(ListaEval &E, Evaluacion Ev)
 
 }
 
-void Levantar_Lista (ListaEval E,String nomArch)
-
+void Levantar_Lista (ListaEval &E,String nomArch)
 {
-
     FILE * f=fopen(nomArch,"rb");
-
-    Evaluacion Ev;
-
-    Levantar_Evaluacion (Ev,f);
-
+    Evaluacion buffer;
+    Levantar_Evaluacion (buffer,f);
     while(!feof(f))
-
     {
-
-        InsFront(E,Ev);
-
-        Levantar_Evaluacion (Ev,f);
-
-
-
+        InsFront(E,buffer);
+        Levantar_Evaluacion (buffer,f);
     }
-
     fclose(f);
-
-
-
-
-
 }
 
 
 
 
 
-void Levantar_Evaluacion (Evaluacion Ev, FILE *f)
-
-{
-
-Levantar_Fecha (Ev.f,f);
-
-fread(&Ev.CodigoExpediente,sizeof(int),1,f);
-
-Levantar_String(Ev.desc,f);
-
-fread(&Ev.e,sizeof(int),1,f);
 
 
-}
 void Bajar_ListaEvaluaciones(ListaEval E , String nomArch){
     FILE * f = fopen (nomArch, "wb");
     while (E != NULL)
     {
-        Bajar_Revision(E -> info, f);
-        E = E -> sig;
+        Bajar_Revision(E->info, f);
+        E = E->sig;
     }
     fclose (f);
 }
-
-
-
-
-
-
 
 void Bajar_Revision (Evaluacion Ev, FILE * f)
 {
@@ -320,6 +285,15 @@ void Bajar_Revision (Evaluacion Ev, FILE * f)
     fwrite (&Ev.CodigoExpediente, sizeof(int), 1, f);
     Bajar_String (Ev.desc, f);
     fwrite (&Ev.e, sizeof(int), 1, f);
+}
+
+void Levantar_Evaluacion (Evaluacion &Ev, FILE *f)
+{
+Levantar_Fecha (Ev.f,f);
+fread(&Ev.CodigoExpediente,sizeof(int),1,f);
+strcrear(Ev.desc);
+Levantar_String(Ev.desc,f);
+fread(&Ev.e,sizeof(int),1,f);
 }
 
 
